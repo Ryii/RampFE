@@ -26,7 +26,7 @@ export function usePaginatedTransactions(): PaginatedTransactionsResult {
 
       return { data: [...previousResponse.data, ...response.data], nextPage: response.nextPage } // Bug 4 Fix
     })
-  }, [fetchWithCache, paginatedTransactions])
+  }, [fetchWithCache, paginatedTransactions, clearCacheByEndpoint])
 
   const invalidateData = useCallback(() => {
     setPaginatedTransactions(null)

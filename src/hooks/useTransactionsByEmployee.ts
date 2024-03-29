@@ -20,7 +20,7 @@ export function useTransactionsByEmployee(): TransactionsByEmployeeResult {
 
       setTransactionsByEmployee(data)
     },
-    [fetchWithCache]
+    [fetchWithCache, clearCacheByEndpoint]
   )
 
   const invalidateData = useCallback(() => {
